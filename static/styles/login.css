@@ -30,6 +30,12 @@ body {
     -moz-user-select: none;
     user-select: none;
 }
+#img-blend {
+    background-blend-mode: screen;
+}
+a {
+    text-decoration: none;
+}
 
 @media (min-width: 768px) {
     .bd-placeholder-img-lg {

@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidcup Family Golf</title>
+    <link
+      rel="shortcut icon"
+      href="https://sidcupfamilygolf.com/wp-content/themes/puttosaurus/favicons/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href={% static "styles/style.css" %} />
+  </head>
+
+  <body>
+    <div id="nav">
+    <img
+      src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/logo-white.svg"
+      alt=""
+    />
+    <h4>TOPTRACER RANGE</h4>
+    <h4>Golf Lessons</h4>
+    <h4>Adventure Golf</h4>
+    <h4>coffee shop</h4>
+    <h4>leagues</h4>
+    <a href="accounts/login"><h4>login</h4></a>
+    <a href="accounts/logout"><h4>logout</h4></a>
+  </div>
+  <div id="cursor"></div>
+    <div id="cursor-blur"></div>
+    {% block body %}{% endblock body %}
+    <script src ={% static "js/script.js" %}></script>

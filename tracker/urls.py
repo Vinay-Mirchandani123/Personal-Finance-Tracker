@@ -23,5 +23,8 @@ admin.site.index_title = "Welcome to Tracker"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('home.urls'))
+    path('', include('home.urls')),
+    path('accounts/', include('accounts.urls'))
+
+    # path('accounts/', include('accounts.urls'))
 ]
