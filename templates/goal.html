@@ -1,0 +1,25 @@
+{% extends "mainbase.html" %}
+{% block body %}
+<div class="container">
+    <section id="goals">
+    <h2>Goals Information</h2>
+    <form id="goalsForm">
+        <label for="goalName">Goal Name:</label>
+        <input type="text" id="goalName" name="goalName" required>
+        
+        <label for="goalAmount">Goal Amount:</label>
+        <input type="number" id="goalAmount" name="goalAmount" required>
+
+        <label for="goalDeadline">Goal Deadline:</label>
+        <input type="date" id="goalDeadline" name="goalDeadline" required>
+
+        <button type="submit">Set Goal</button>
+    </form>
+    </section>
+</div>
+{% endblock body %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+<script src="script2.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "mainbase.html" %}
+{% block body %}
+<div class="container">
+    <section id="salary">
+        <h2>Salary Information</h2>
+        <form id="salaryForm">
+            <label for="salaryAmount">Fixed Salary(in Rs):</label>
+            <input type="number" id="salaryAmount" name="salaryAmount" required>
+            <label for="salaryAmount">Variable Salary(in Rs):</label>
+            <input type="number" id="salaryAmount" name="salaryAmount" required>
+
+            <button type="submit">Submit Salary</button>
+        </form>
+    </section>
+</div>
+{% endblock body %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+<script src="script2.js"></script>
+</body>
+</html>
