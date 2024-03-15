@@ -30,7 +30,7 @@ def loginUser(request):
         user = authenticate(username=email, password=password)
         if user:
             login(request, user)
-            return redirect("/")
+            return render(request, "mainbase.html")
         
         messages.success(request, "Invalid Credentials")
         return HttpResponseRedirect(request.path_info)

@@ -3,14 +3,16 @@
 <div class="container">
     <section id="expenses">
         <h2>Expenses Information</h2>
-        <form id="expensesForm">
+        <form id="expensesForm" method="post" action="/goal/expense">
+            {% csrf_token %}
+            {% include "base/alert.html" %}
             <label for="expenseName">Expense Name:</label>
-            <input type="text" id="expenseName" name="expenseName" required>
+            <input type="text" id="exp_name" name="exp_name" required>
             
-            <label for="expenseAmount">Fixed Expense(in rs):</label>
-            <input type="number" id="expenseAmount" name="expenseAmount" required>
-            <label for="expenseAmount">Variable Expense(in rs):</label>
-            <input type="number" id="expenseAmount" name="expenseAmount" required>
+            <label for="expenseAmount">Fixed Expense(in Rs):</label>
+            <input type="number" id="fix_expense" name="fix_expense" required>
+            <label for="expenseAmount">Variable Expense(in Rs):</label>
+            <input type="number" id="var_expense" name="var_expense" required>
             <button type="submit">Add Expense</button>
         </form>
     </section>

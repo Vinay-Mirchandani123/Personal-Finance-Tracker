@@ -1,11 +1,11 @@
 *{
-    margin: 0;
+    margin: 0px;
     padding: 0;
 }
 body{
-    background-repeat: no-repeat;
-    margin: 0%;
-    
+    height: 90vh;
+    width: 100%;
+    /* background-repeat: no-repeat; */
     background-size: cover;
 }
 /* .siddhant{
@@ -25,7 +25,7 @@ body{
     text-align: center;
 }
 .logoimg img{
-    border-radius:70%;
+    border-radius:50%;
     height: 35px;
     align-items:center;
     margin: 5px;
@@ -123,7 +123,7 @@ body{
     
 } */
 body {
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif; */
     margin: 0;
     padding: 0;
 }

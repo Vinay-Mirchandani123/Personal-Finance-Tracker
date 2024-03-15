@@ -1,0 +1,41 @@
+{% comment %} {% extends "mainbase.html" %}
+{% block body %}
+
+<h1>Goal Amounts Chart</h1>
+<canvas id="goalChart" method="post" action="/goal/chart"></canvas>
+{% endblock body %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('{% url 'goal_chart_data' %}')
+        .then(response => response.json())
+        .then(data => {
+            const ctx = document.getElementById('goalChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        label: 'Goal Amounts',
+                        data: data.amounts,
+                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+<script src="script2.js"></script> {% endcomment %}
