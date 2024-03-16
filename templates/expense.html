@@ -1,0 +1,25 @@
+{% extends "mainbase.html" %}
+{% block body %}
+<div class="container">
+    <section id="expenses">
+        <h2>Expenses Information</h2>
+        <form id="expensesForm" method="post" action="/goal/expense">
+            {% csrf_token %}
+            {% include "base/alert.html" %}
+            <label for="expenseName">Expense Name:</label>
+            <input type="text" id="exp_name" name="exp_name" required>
+            
+            <label for="expenseAmount">Fixed Expense(in Rs):</label>
+            <input type="number" id="fix_expense" name="fix_expense" required>
+            <label for="expenseAmount">Variable Expense(in Rs):</label>
+            <input type="number" id="var_expense" name="var_expense" required>
+            <button type="submit">Add Expense</button>
+        </form>
+    </section>
+    </div>
+{% endblock body %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+<script src="script2.js"></script>
+</body>
+</html>
