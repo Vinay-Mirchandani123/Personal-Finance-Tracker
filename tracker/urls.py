@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from goal.views import *
 
 admin.site.site_header = "Tracker"
 admin.site.site_title = "Tracker Admin Portal"
@@ -25,7 +26,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('accounts/', include('accounts.urls')),
-    path('goal/', include('goal.urls'))
+    path('goal/', include('goal.urls')),
+    path('api/salData/', salDataView.as_view()),
+    path('api/expData/', expDataView.as_view()),
+    path('api/goalData/', goalDataView.as_view()),
 
     # path('accounts/', include('accounts.urls'))
 ]
