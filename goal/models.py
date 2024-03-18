@@ -1,7 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Salary(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     fix_salary = models.IntegerField(null=False, blank=False)
     var_salary = models.IntegerField(null=False, blank=False)
     
@@ -10,7 +12,7 @@ class Salary(models.Model):
     
 
 class Expense(models.Model):
-    
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     exp_name = models.CharField(max_length=100,null=False, blank=False)
     fix_expense = models.IntegerField(null=False, blank=False)
     var_expense = models.IntegerField(null=False, blank=False)
@@ -18,6 +20,7 @@ class Expense(models.Model):
     #     return self.name
 
 class Goal(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     goal_name=models.CharField(max_length=100,null=False, blank=False)
     amount=models.IntegerField(null=False, blank=False)
     goalDeadline=models.DateField(null=False, blank=False)

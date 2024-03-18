@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout,get_user
 from django.contrib import messages
 from .models import Profile
+from .forms import UserProfileForm
 
 # Create your views here.
 def index(request):
@@ -37,6 +38,16 @@ def loginUser(request):
     
     return render(request, 'accounts/login.html')
 
+def profile_edit(request):
+    user_profile, created = Profile.objects.get_or_create(user=request.user)
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, instance=user_profile)
+        if form.is_valid():
+            form.save()
+            return redirect('profile_edit')
+    else:
+        form = UserProfileForm(instance=user_profile)
+    return render(request, 'profile_edit.html', {'form': form})
 
 def logoutUser(request):
     logout(request)

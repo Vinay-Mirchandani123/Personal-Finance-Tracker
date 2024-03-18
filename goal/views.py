@@ -26,7 +26,10 @@ def salary(request):
     if request.method == "POST":
         fix_salary = request.POST["fix_salary"]
         var_salary = request.POST["var_salary"]
-        income = Salary(fix_salary=fix_salary, var_salary=var_salary)
+        
+        user = request.user
+        
+        income = Salary(user=user,fix_salary=fix_salary, var_salary=var_salary)
         income.save()
         messages.success(request, "salary entered successfully")
 
@@ -38,8 +41,9 @@ def expense(request):
         exp_name = request.POST["exp_name"]
         fix_expense = request.POST["fix_expense"]
         var_expense = request.POST["var_expense"]
+        user = request.user
         kharcha = Expense(
-            exp_name=exp_name, fix_expense=fix_expense, var_expense=var_expense
+           user=user, exp_name=exp_name, fix_expense=fix_expense, var_expense=var_expense
         )
         kharcha.save()
         messages.success(request, "expense entered successfully")
@@ -51,7 +55,9 @@ def goal(request):
         goal_name = request.POST["goal_name"]
         amount = request.POST["amount"]
         goalDeadline = request.POST["goalDeadline"]
+        user = request.user
         achieve = Goal(
+            user=user,
             goal_name=goal_name,
             amount=amount,
             goalDeadline=goalDeadline,
