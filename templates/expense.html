@@ -3,7 +3,7 @@
 <div class="container">
     <section id="expenses">
         <h2>Expenses Information</h2>
-        <form id="expensesForm" method="post" action="/goal/expense">
+        <form id="expensesForm" method="post" action="/goal/expense/{{user.username}}/">
             {% csrf_token %}
             {% include "base/alert.html" %}
             <label for="expenseName">Expense Name:</label>

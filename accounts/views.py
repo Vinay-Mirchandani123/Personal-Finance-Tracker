@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.http import HttpResponseRedirect
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User,auth
 from django.contrib.auth import authenticate,login,logout,get_user
 from django.contrib import messages
 from .models import Profile
@@ -12,7 +12,7 @@ def index(request):
        return render(request, 'index.html')
     return render(request, 'accounts/login.html')
 
-def loginUser(request):
+def loginUser(request):   
     
     if(request.method=="POST"):
         email=request.POST['email']
@@ -30,7 +30,7 @@ def loginUser(request):
 
         user = authenticate(username=email, password=password)
         if user:
-            login(request, user)
+            auth.login(request, user)
             return render(request, "mainbase.html")
         
         messages.success(request, "Invalid Credentials")

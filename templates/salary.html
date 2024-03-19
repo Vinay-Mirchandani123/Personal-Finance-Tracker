@@ -3,7 +3,7 @@
 <div class="container">
     <section id="salary">
         <h2>Salary Information</h2>
-        <form id="salaryForm" method="post" action="/goal/salary/">
+        <form id="salaryForm" method="post" action="/goal/salary/{{user.username}}/">
             {% csrf_token %}
             {% include "base/alert.html" %}
             <label for="salaryAmount">Fixed Salary(in Rs):</label>

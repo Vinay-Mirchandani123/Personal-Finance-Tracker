@@ -22,13 +22,11 @@ def progress(request):
     return render(request, "mainbase.html")
 
 
-def salary(request):
+def salary(request, username):
     if request.method == "POST":
         fix_salary = request.POST["fix_salary"]
         var_salary = request.POST["var_salary"]
-        
-        user = request.user
-        
+        user = username
         income = Salary(user=user,fix_salary=fix_salary, var_salary=var_salary)
         income.save()
         messages.success(request, "salary entered successfully")
@@ -36,12 +34,12 @@ def salary(request):
     return render(request, "salary.html")
 
 
-def expense(request):
+def expense(request,username):
     if request.method == "POST":
         exp_name = request.POST["exp_name"]
         fix_expense = request.POST["fix_expense"]
         var_expense = request.POST["var_expense"]
-        user = request.user
+        user = username
         kharcha = Expense(
            user=user, exp_name=exp_name, fix_expense=fix_expense, var_expense=var_expense
         )
@@ -50,12 +48,12 @@ def expense(request):
     return render(request, "expense.html")
 
 
-def goal(request):
+def goal(request,username):
     if request.method == "POST":
         goal_name = request.POST["goal_name"]
         amount = request.POST["amount"]
         goalDeadline = request.POST["goalDeadline"]
-        user = request.user
+        user = username
         achieve = Goal(
             user=user,
             goal_name=goal_name,
