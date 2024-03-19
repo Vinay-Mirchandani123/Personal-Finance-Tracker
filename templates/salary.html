@@ -6,6 +6,8 @@
         <form id="salaryForm" method="post" action="/goal/salary/{{user.username}}/">
             {% csrf_token %}
             {% include "base/alert.html" %}
+            <label for="goalName">Salary name:</label>
+        <input type="text" id="sal_name" name="sal_name" required>
             <label for="salaryAmount">Fixed Salary(in Rs):</label>
             <input type="number" id="fix_salary" name="fix_salary" required>
             <label for="salaryAmount" >Variable Salary(in Rs):</label>

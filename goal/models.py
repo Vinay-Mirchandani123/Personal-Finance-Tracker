@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Salary(models.Model):
     user = models.CharField(max_length=100)
+    sal_name = models.CharField(max_length=100,null=False, blank=False)
     fix_salary = models.IntegerField(null=False, blank=False)
     var_salary = models.IntegerField(null=False, blank=False)
     

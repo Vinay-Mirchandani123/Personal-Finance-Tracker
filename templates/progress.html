@@ -1,43 +1,199 @@
+<!-- goal/templates/goal_progress.html -->
 {% extends "mainbase.html" %}
 {% block body %}
+    <h1>Goal Progress Chart</h1>
+    <div>
+        <canvas id="salProgressChart"></canvas>
+        
+    </div>
+    <div>
+        <canvas id="expProgressChart" ></canvas>
+        
+    </div>
+    <div>
+        
+        <canvas id="goalProgressChart"></canvas>
+    </div>
+    
+    {% csrf_token %}
+            {% include "base/alert.html" %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('goalProgressChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: {{ goal_labels|safe }},
+                datasets: [{
+                    label: 'Goal Amount',
+                    data: {{ goal_amounts|safe }},
+                    backgroundColor: [
+                                'rgba(255, 99, 132, 0.8)',
+                                'rgba(54, 162, 235, 0.8)',
+                                'rgba(255, 206, 86, 0.8)',
+                                'rgba(75, 192, 192, 0.8)',
+                                'rgba(153, 102, 255, 0.8)',
+                                'rgba(255, 159, 64, 0.8)',
+                                'rgba(240, 120, 50, 0.8)',
+                            ],
+                    borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(240, 120, 50, 1)',
 
-{% comment %}
-<h1>Goal Amounts Chart</h1>
-<canvas id="goalChart" method="post" action="/goal/chart"></canvas>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        fetch('{% url 'goal_chart_data' %}')
-        .then(response => response.json())
-        .then(data => {
-            const ctx = document.getElementById('goalChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: data.labels,
-                    datasets: [{
-                        label: 'Goal Amounts',
-                        data: data.amounts,
-                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                        borderColor: 'rgba(54, 162, 235, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
+                            ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                width:10,
+                height:10,
+                scales: {
+                    y: {
+                        beginAtZero: true
                     }
                 }
-            });
+            }
         });
-    });
-</script>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var c = document.getElementById('expProgressChart').getContext('2d');
+        var myChart = new Chart(c, {
+            type: 'line',
+            data: {
+                labels: {{ expense_labels|safe }},
+                datasets: [{
+                    label: 'expense',
+                    data: {{ expense_fix|safe }},
+                    backgroundColor: [
+                                'rgba(255, 99, 132, 0.8)',
+                                'rgba(54, 162, 235, 0.8)',
+                                'rgba(255, 206, 86, 0.8)',
+                                'rgba(75, 192, 192, 0.8)',
+                                'rgba(153, 102, 255, 0.8)',
+                                'rgba(255, 159, 64, 0.8)',
+                                'rgba(240, 120, 50, 0.8)',
+                            ],
+                    borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(240, 120, 50, 1)',
 
+                            ],
+                    borderWidth: 2
+                },
+                    {
+                        label: 'var sal',
+                        data: {{ expense_var|safe }},
+                        backgroundColor: [
+                                    'rgba(255, 99, 132, 0.8)',
+                                    'rgba(54, 162, 235, 0.8)',
+                                    'rgba(255, 206, 86, 0.8)',
+                                    'rgba(75, 192, 192, 0.8)',
+                                    'rgba(153, 102, 255, 0.8)',
+                                    'rgba(255, 159, 64, 0.8)',
+                                    'rgba(240, 120, 50, 0.8)',
+                                ],
+                        borderColor: [
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(240, 120, 50, 1)',
+    
+                                ],
+                        borderWidth: 2
+                }]
+            },
+            options: {
+                width:10,
+                height:10,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ct = document.getElementById('salProgressChart').getContext('2d');
+        var myChart = new Chart(ct, {
+            type: 'bar',
+            data: {
+                labels: {{ salary_labels|safe }},
+                datasets: [{
+                    label: 'salary',
+                    data: {{ salary_var|safe }},
+                    backgroundColor: [
+                                'rgba(255, 99, 132, 0.8)',
+                                'rgba(54, 162, 235, 0.8)',
+                                'rgba(255, 206, 86, 0.8)',
+                                'rgba(75, 192, 192, 0.8)',
+                                'rgba(153, 102, 255, 0.8)',
+                                'rgba(255, 159, 64, 0.8)',
+                                'rgba(240, 120, 50, 0.8)',
+                            ],
+                    borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(240, 120, 50, 1)',
 
+                            ],
+                    borderWidth: 2
+                },
+                {
+                    label: 'var sal',
+                    data: {{ salary_fix|safe }},
+                    backgroundColor: [
+                                'rgba(255, 99, 132, 0.8)',
+                                'rgba(54, 162, 235, 0.8)',
+                                'rgba(255, 206, 86, 0.8)',
+                                'rgba(75, 192, 192, 0.8)',
+                                'rgba(153, 102, 255, 0.8)',
+                                'rgba(255, 159, 64, 0.8)',
+                                'rgba(240, 120, 50, 0.8)',
+                            ],
+                    borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(240, 120, 50, 1)',
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>{% endcomment %}
-{% endblock body %}
-<script src="script2.js"></script> 
+                            ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                width:10,
+                height:10,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+{% endblock body%}
+</body>
+</html>

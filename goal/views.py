@@ -18,8 +18,57 @@ from .serializers import *
 # # Create your views here.
 
 
+# def progress(request):
+#     # Retrieve data from models
+#     
+#     goals = Goal.objects.all()
+
+#     # Prepare data for chart
+#     salary_data = {'labels': ['Fixed Salary', 'Variable Salary'],
+#                    'data': [sum(s.fix_salary for s in salaries), sum(s.var_salary for s in salaries)]}
+
+#     expense_data = {'labels': ['Fixed Expense', 'Variable Expense'],
+#                     'data': [sum(e.fix_expense for e in expenses), sum(e.var_expense for e in expenses)]}
+
+#     goal_data = {'labels': [g.goal_name for g in goals],
+#                  'data': [g.amount for g in goals]}
+
+#     # Pass data to the template
+#     context = {
+#         'salary_data': salary_data,
+#         'expense_data': expense_data,
+#         'goal_data': goal_data,
+#     }
+
+#     return render(request, "mainbase.html", context)
 def progress(request):
-    return render(request, "mainbase.html")
+    # Retrieve data from models
+    goals = Goal.objects.filter(user=request.user)
+    salaries = Salary.objects.filter(user=request.user)
+    expenses = Expense.objects.filter(user=request.user)
+    # Prepare data for chart
+    goal_labels = [goal.goal_name for goal in goals]
+    goal_amounts = [goal.amount for goal in goals]
+    expense_labels = [expense.exp_name for expense in expenses]
+    expense_fix = [expense.fix_expense for expense in expenses]
+    expense_var = [expense.var_expense for expense in expenses]
+    salary_labels = [salary.sal_name for salary in salaries]
+    salary_var = [salary.var_salary for salary in salaries]
+    salary_fix = [salary.fix_salary for salary in salaries]
+    # Pass data to the template
+    context = {
+        'goal_labels': goal_labels,
+        'goal_amounts': goal_amounts,
+        'expense_labels': expense_labels,
+        'expense_fix': expense_fix,
+        'expense_var': expense_var,
+        'salary_labels': salary_labels,
+        'salary_var': salary_var,
+        'salary_fix': salary_fix,
+        
+    }
+
+    return render(request, "progress.html", context)
 
 
 def salary(request, username):
@@ -91,16 +140,16 @@ class salDataView(APIView):
     def get(self, request):
         data = Salary.objects.all()
         serializer = salDataSerializer(data, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        return JsonResponse(serializer.data,  safe=False)
     
 class expDataView(APIView):
     def get(self, request):
         data = Expense.objects.all()
         serializer = expDataSerializer(data, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        return JsonResponse(serializer.data,  safe=False)
 
 class goalDataView(APIView):
     def get(self, request):
         data = Goal.objects.all()
         serializer = goalDataSerializer(data, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        return JsonResponse(serializer.data,  safe=False)
