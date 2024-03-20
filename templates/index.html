@@ -1,169 +1,1189 @@
-{% extends "base/base.html" %}
-{% block body %}
-    {% comment %} <video autoplay loop muted src="https://sidcupfamilygolf.com/wp-content/uploads/2023/02/hero.mp4"></video> {% endcomment %}
-    <div id="main">
-      <div id="page1">
-        <h1>Balance. Earn. Achieve</h1>
-        <h2>WELCOME TO BUDGET BUDDY!</h2>
-        <p>
-          Budget Buddy is more than just a finance tracker- It's your partner on the path to financial well-being. Empower yourself with intuitive tools, insightful analytics, and personalized guidance.
-        </p>
-      </div>
-      <div id="page2">
-        <div id="scroller">
-          <div id="scroller-in">
-            <h4>EARNING IN MOTION,</h4>
-            <h4>EXPENSES IN CHECK,</h4>
-            <h4>ACHIEVEMENTS IN FOCUS</h4>
-            
-          </div>
-          {% comment %} <div id="scroller-in">
-            <h4>EARNING IN MOTION,</h4>
-            <h4>EXPENSES IN CHECK,</h4>
-            <h4>ACHIEVEMENTS IN FOCUS</h4> {% endcomment %}
-            
-            
-          </div>
-        </div>
-        <div id="about-us">
-          <img
-            src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-about-1-300x200.jpg?strip=all&lossy=1&sharp=1&ssl=1"
-            alt=""
-          />
-          <div id="about-us-in">
-            <h3>ABOUT US</h3>
-            <p>
-              Welcome to BUDGET BUDDY – your trusted companion in the realm of personal finance. Established with the vision to simplify financial management, our team at BUDGET BUDDY is dedicated to providing you with a seamless and empowering experience. We believe in user-centric design, constant innovation, and robust security, ensuring that your financial journey is both effective and secure. Join us as we revolutionize the way you handle your finances – making it not just a task but a journey towards financial well-being.
-            </p>
-          </div>
-          <img
-            src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-about-2-300x200.jpg?strip=all&lossy=1&sharp=1&ssl=1"
-            alt=""
-          />
-        </div>
-        <div id="cards-container">
-          <div class="card" id="card1">
-            <div class="overlay">
-              <h4>SALARY</h4>
-            </div>
-          </div>
-          <div class="card" id="card2">
-            <div class="overlay">
-              <h4>EXPENSES</h4>
-              <p>
-                
-              </p>
-            </div>
-          </div>
-          <div class="card" id="card3">
-            <div class="overlay">
-              <h4>GOAL</h4> 
-              <p>
-                
-              </p>
-            </div>
-          </div>
-        </div>
-        <div id="green-div">
-          <img
-            src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-side.svg"
-            alt=""
-          />
-          <h4>
-            SIGN UP FOR BUDGET BUDDY MY BUDDY 
-          </h4>
-          <img
-            src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-side.svg"
-            alt=""
-          />
-        </div>
-      </div>
-      <div id="page3">
-        <p>
-          Elevate your financial control with BUDGET BUDDY. Effortlessly budget and track expenses in real-time through our user-friendly interface. Achieve precise financial goals, whether you're a finance enthusiast or a novice. Benefit from innovative insights, secure data handling, and continuous updates for effective financial management. Choose BUDGET BUDDY for a reliable, comprehensive, and user-friendly solution.
-        </p>
-        <img
-          id="colon1"
-          src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-left.svg"
-          alt=""
-        />
-        <img
-          id="colon2"
-          src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-right.svg"
-          alt=""
-        />
-      </div>
-      <div id="page4">
-        <h1>WHAT ARE YOU WAITING FOR?</h1>
-        <div class="elem">
-          <h2>TWITTER.COM</h2>
-          <img
-            src="data:image/png;base64,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"
-            alt=""
-          />
-        </div>
-        <div class="elem">
-          <h2>INSTAGRAM.COM</h2>
-          <img
-            src="data:image/jpeg;base64,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"
-            alt=""
-          />
-        </div>
-        <div class="elem">
-          <h2>FACEBOOK.COM</h2>
-          <img
-            src="data:image/png;base64,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"
-            alt=""
-          />
-        </div>
-      </div>
-      <div id="footer">
-        <img
-          src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-footer.svg"
-          alt=""
-        />
-        <div id="f1">
-          <img
-            src="static/images/logo.jpg"
-            alt=""
-          />
-        </div>
-        <div id="f2">
-          <h3>EARNINGS</h3>
-          <h3>SHAPE</h3>
-          <h3>TRIUMPH</h3>
-        </div>
-        <div id="f3">
-          <h3>FAQs</h3>
-          <h3>Support center</h3>
-          <h3>Learn more</h3>
-        </div>
-        <div id="f4">
-           {% comment %} <h4>
-            A20, SIDCUP BYPASS <br />
-            CHISLEHURST <br />
-            KENT <br />
-            BR7 6RP <br />
-            TEL: 0208 309 0181 <br />
-            GET DIRECTIONS <br /> 
-          </h4>  {% endcomment %}
-        </div>
-      </div>
-    </div>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"
-      integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js"
-      integrity="sha512-IHDCHrefnBT3vOCsvdkMvJF/MCPz/nBauQLzJkupa4Gn4tYg5a6VGyzIrjo6QAUy3We5HFOZUlkUpP0dkgE60A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="script.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static "img/favicon.png" %}" rel="icon">
+  <link href="{% static "img/apple-touch-icon.png" %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static "static/vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+  <link href="{% static "static/vendor/bootstrap-icons/bootstrap-icons.css" %}" rel="stylesheet">
+  <link href="{% static "static/vendor/boxicons/css/boxicons.min.css" %}" rel="stylesheet">
+  <link href="{% static "static/vendor/quill/quill.snow.css" %}" rel="stylesheet">
+  <link href="{% static "static/vendor/quill/quill.bubble.css" %}" rel="stylesheet">
+  <link href="{% static "static/vendor/remixicon/remixicon.css" %}" rel="stylesheet">
+  <link href="{% static "static/vendor/simple-datatables/style.css" %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static "static/css/style.css" %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="{% static "index.html" %}" class="logo d-flex align-items-center">
+        <img src="{% static "img/logo.png" %}" alt="">
+        <span class="d-none d-lg-block">NiceAdmin</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a><!-- End Notification Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 4 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-exclamation-circle text-warning"></i>
+              <div>
+                <h4>Lorem Ipsum</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>30 min. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div>
+                <h4>Atque rerum nesciunt</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>1 hr. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <div>
+                <h4>Sit rerum fuga</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>2 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Dicta reprehenderit</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>4 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul><!-- End Notification Dropdown Items -->
+
+        </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+          </a><!-- End Messages Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+            <li class="dropdown-header">
+              You have 3 new messages
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="{% static "img/messages-1.jpg" %}" alt="" class="rounded-circle">
+                <div>
+                  <h4>Maria Hudson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>4 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="{% static "img/messages-2.jpg" %}" alt="" class="rounded-circle">
+                <div>
+                  <h4>Anna Nelson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>6 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="{% static "img/messages-3.jpg" %}" alt="" class="rounded-circle">
+                <div>
+                  <h4>David Muldon</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>8 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="dropdown-footer">
+              <a href="#">Show all messages</a>
+            </li>
+
+          </ul><!-- End Messages Dropdown Items -->
+
+        </li><!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="{% static "img/profile-img.jpg" %}" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Kevin Anderson</h6>
+              <span>Web Designer</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="{% static "users-profile.html" %}">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="{% static "users-profile.html" %}">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="{% static "index.html" %}">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% static "components-alerts.html" %}">
+              <i class="bi bi-circle"></i><span>Alerts</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% static "components-accordion.html" %}">
+              <i class="bi bi-circle"></i><span>Accordion</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% static "components-badges.html" %}">
+              <i class="bi bi-circle"></i><span>Badges</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% static "components-breadcrumbs.html" %}">
+              <i class="bi bi-circle"></i><span>Breadcrumbs</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% static "components-buttons.html" %}">
+              <i class="bi bi-circle"></i><span>Buttons</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% static "components-cards.html" %}">
+              <i class="bi bi-circle"></i><span>Cards</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% static "components-carousel.html" %}">
+              <i class="bi bi-circle"></i><span>Carousel</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% static "components-list-group.html" %}">
+              <i class="bi bi-circle"></i><span>List group</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% static "components-modal.html" %}">
+              <i class="bi bi-circle"></i><span>Modal</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% static "components-tabs.html" %}">
+              <i class="bi bi-circle"></i><span>Tabs</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% static "components-pagination.html" %}">
+              <i class="bi bi-circle"></i><span>Pagination</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% static "components-progress.html" %}">
+              <i class="bi bi-circle"></i><span>Progress</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% static "components-spinners.html" %}">
+              <i class="bi bi-circle"></i><span>Spinners</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% static "components-tooltips.html" %}">
+              <i class="bi bi-circle"></i><span>Tooltips</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Components Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% static "forms-elements.html" %}">
+              <i class="bi bi-circle"></i><span>Form Elements</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% static "forms-layouts.html" %}">
+              <i class="bi bi-circle"></i><span>Form Layouts</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% static "forms-editors.html" %}">
+              <i class="bi bi-circle"></i><span>Form Editors</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% static "forms-validation.html" %}">
+              <i class="bi bi-circle"></i><span>Form Validation</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% static "tables-general.html" %}">
+              <i class="bi bi-circle"></i><span>General Tables</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% static "tables-data.html" %}">
+              <i class="bi bi-circle"></i><span>Data Tables</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% static "charts.chartjs.html" %}">
+              <i class="bi bi-circle"></i><span>Chart.js</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% static "charts-apexcharts.html" %}">
+              <i class="bi bi-circle"></i><span>ApexCharts</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% static "charts-echarts.html" %}">
+              <i class="bi bi-circle"></i><span>ECharts</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Charts Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-gem"></i><span>Icons</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% static "icons-bootstrap.html" %}">
+              <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% static "icons-remix.html" %}">
+              <i class="bi bi-circle"></i><span>Remix Icons</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% static "icons-boxicons.html" %}">
+              <i class="bi bi-circle"></i><span>Boxicons</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Icons Nav -->
+
+      <li class="nav-heading">Pages</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% static "users-profile.html" %}">
+          <i class="bi bi-person"></i>
+          <span>Profile</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% static "pages-faq.html" %}">
+          <i class="bi bi-question-circle"></i>
+          <span>F.A.Q</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% static "pages-contact.html" %}">
+          <i class="bi bi-envelope"></i>
+          <span>Contact</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% static "pages-register.html" %}">
+          <i class="bi bi-card-list"></i>
+          <span>Register</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% static "pages-login.html" %}">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Login</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% static "pages-error-404.html" %}">
+          <i class="bi bi-dash-circle"></i>
+          <span>Error 404</span>
+        </a>
+      </li><!-- End Error 404 Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% static "pages-blank.html" %}">
+          <i class="bi bi-file-earmark"></i>
+          <span>Blank</span>
+        </a>
+      </li><!-- End Blank Page Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Dashboard</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% static "index.html" %}">Home</a></li>
+          <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-- Left side columns -->
+        <div class="col-lg-8">
+          <div class="row">
+
+            <!-- Sales Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Sales <span>| Today</span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-cart"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>145</h6>
+                      <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Sales Card -->
+
+            <!-- Revenue Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card revenue-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Revenue <span>| This Month</span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-currency-dollar"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>$3,264</h6>
+                      <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+
+            <!-- Customers Card -->
+            <div class="col-xxl-4 col-xl-12">
+
+              <div class="card info-card customers-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Customers <span>| This Year</span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>1244</h6>
+                      <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div><!-- End Customers Card -->
+
+            <!-- Reports -->
+            <div class="col-12">
+              <div class="card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Reports <span>/Today</span></h5>
+
+                  <!-- Line Chart -->
+                  <div id="reportsChart"></div>
+
+                  <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                      new ApexCharts(document.querySelector("#reportsChart"), {
+                        series: [{
+                          name: 'Sales',
+                          data: [31, 40, 28, 51, 42, 82, 56],
+                        }, {
+                          name: 'Revenue',
+                          data: [11, 32, 45, 32, 34, 52, 41]
+                        }, {
+                          name: 'Customers',
+                          data: [15, 11, 32, 18, 9, 24, 11]
+                        }],
+                        chart: {
+                          height: 350,
+                          type: 'area',
+                          toolbar: {
+                            show: false
+                          },
+                        },
+                        markers: {
+                          size: 4
+                        },
+                        colors: ['#4154f1', '#2eca6a', '#ff771d'],
+                        fill: {
+                          type: "gradient",
+                          gradient: {
+                            shadeIntensity: 1,
+                            opacityFrom: 0.3,
+                            opacityTo: 0.4,
+                            stops: [0, 90, 100]
+                          }
+                        },
+                        dataLabels: {
+                          enabled: false
+                        },
+                        stroke: {
+                          curve: 'smooth',
+                          width: 2
+                        },
+                        xaxis: {
+                          type: 'datetime',
+                          categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+                        },
+                        tooltip: {
+                          x: {
+                            format: 'dd/MM/yy HH:mm'
+                          },
+                        }
+                      }).render();
+                    });
+                  </script>
+                  <!-- End Line Chart -->
+
+                </div>
+
+              </div>
+            </div><!-- End Reports -->
+
+            <!-- Recent Sales -->
+            <div class="col-12">
+              <div class="card recent-sales overflow-auto">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Recent Sales <span>| Today</span></h5>
+
+                  <table class="table table-borderless datatable">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Customer</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"><a href="#">#2457</a></th>
+                        <td>Brandon Jacob</td>
+                        <td><a href="#" class="text-primary">At praesentium minu</a></td>
+                        <td>$64</td>
+                        <td><span class="badge bg-success">Approved</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2147</a></th>
+                        <td>Bridie Kessler</td>
+                        <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
+                        <td>$47</td>
+                        <td><span class="badge bg-warning">Pending</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2049</a></th>
+                        <td>Ashleigh Langosh</td>
+                        <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
+                        <td>$147</td>
+                        <td><span class="badge bg-success">Approved</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2644</a></th>
+                        <td>Angus Grady</td>
+                        <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
+                        <td>$67</td>
+                        <td><span class="badge bg-danger">Rejected</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2644</a></th>
+                        <td>Raheem Lehner</td>
+                        <td><a href="#" class="text-primary">Sunt similique distinctio</a></td>
+                        <td>$165</td>
+                        <td><span class="badge bg-success">Approved</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </div>
+            </div><!-- End Recent Sales -->
+
+            <!-- Top Selling -->
+            <div class="col-12">
+              <div class="card top-selling overflow-auto">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body pb-0">
+                  <h5 class="card-title">Top Selling <span>| Today</span></h5>
+
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr>
+                        <th scope="col">Preview</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Sold</th>
+                        <th scope="col">Revenue</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"><a href="#"><img src="{% static "img/product-1.jpg" %}" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
+                        <td>$64</td>
+                        <td class="fw-bold">124</td>
+                        <td>$5,828</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#"><img src="{% static "img/product-2.jpg" %}" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">Exercitationem similique doloremque</a></td>
+                        <td>$46</td>
+                        <td class="fw-bold">98</td>
+                        <td>$4,508</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#"><img src="{% static "img/product-3.jpg" %}" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
+                        <td>$59</td>
+                        <td class="fw-bold">74</td>
+                        <td>$4,366</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#"><img src="{% static "img/product-4.jpg" %}" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">Officiis quaerat sint rerum error</a></td>
+                        <td>$32</td>
+                        <td class="fw-bold">63</td>
+                        <td>$2,016</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#"><img src="{% static "img/product-5.jpg" %}" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">Sit unde debitis delectus repellendus</a></td>
+                        <td>$79</td>
+                        <td class="fw-bold">41</td>
+                        <td>$3,239</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </div>
+            </div><!-- End Top Selling -->
+
+          </div>
+        </div><!-- End Left side columns -->
+
+        <!-- Right side columns -->
+        <div class="col-lg-4">
+
+          <!-- Recent Activity -->
+          <div class="card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Recent Activity <span>| Today</span></h5>
+
+              <div class="activity">
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">32 min</div>
+                  <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
+                  <div class="activity-content">
+                    Quia quae rerum <a href="#" class="fw-bold text-dark">explicabo officiis</a> beatae
+                  </div>
+                </div><!-- End activity item-->
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">56 min</div>
+                  <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
+                  <div class="activity-content">
+                    Voluptatem blanditiis blanditiis eveniet
+                  </div>
+                </div><!-- End activity item-->
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">2 hrs</div>
+                  <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
+                  <div class="activity-content">
+                    Voluptates corrupti molestias voluptatem
+                  </div>
+                </div><!-- End activity item-->
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">1 day</div>
+                  <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
+                  <div class="activity-content">
+                    Tempore autem saepe <a href="#" class="fw-bold text-dark">occaecati voluptatem</a> tempore
+                  </div>
+                </div><!-- End activity item-->
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">2 days</div>
+                  <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
+                  <div class="activity-content">
+                    Est sit eum reiciendis exercitationem
+                  </div>
+                </div><!-- End activity item-->
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">4 weeks</div>
+                  <i class='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
+                  <div class="activity-content">
+                    Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
+                  </div>
+                </div><!-- End activity item-->
+
+              </div>
+
+            </div>
+          </div><!-- End Recent Activity -->
+
+          <!-- Budget Report -->
+          <div class="card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body pb-0">
+              <h5 class="card-title">Budget Report <span>| This Month</span></h5>
+
+              <div id="budgetChart" style="min-height: 400px;" class="echart"></div>
+
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  var budgetChart = echarts.init(document.querySelector("#budgetChart")).setOption({
+                    legend: {
+                      data: ['Allocated Budget', 'Actual Spending']
+                    },
+                    radar: {
+                      // shape: 'circle',
+                      indicator: [{
+                          name: 'Sales',
+                          max: 6500
+                        },
+                        {
+                          name: 'Administration',
+                          max: 16000
+                        },
+                        {
+                          name: 'Information Technology',
+                          max: 30000
+                        },
+                        {
+                          name: 'Customer Support',
+                          max: 38000
+                        },
+                        {
+                          name: 'Development',
+                          max: 52000
+                        },
+                        {
+                          name: 'Marketing',
+                          max: 25000
+                        }
+                      ]
+                    },
+                    series: [{
+                      name: 'Budget vs spending',
+                      type: 'radar',
+                      data: [{
+                          value: [4200, 3000, 20000, 35000, 50000, 18000],
+                          name: 'Allocated Budget'
+                        },
+                        {
+                          value: [5000, 14000, 28000, 26000, 42000, 21000],
+                          name: 'Actual Spending'
+                        }
+                      ]
+                    }]
+                  });
+                });
+              </script>
+
+            </div>
+          </div><!-- End Budget Report -->
+
+          <!-- Website Traffic -->
+          <div class="card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body pb-0">
+              <h5 class="card-title">Website Traffic <span>| Today</span></h5>
+
+              <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
+
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  echarts.init(document.querySelector("#trafficChart")).setOption({
+                    tooltip: {
+                      trigger: 'item'
+                    },
+                    legend: {
+                      top: '5%',
+                      left: 'center'
+                    },
+                    series: [{
+                      name: 'Access From',
+                      type: 'pie',
+                      radius: ['40%', '70%'],
+                      avoidLabelOverlap: false,
+                      label: {
+                        show: false,
+                        position: 'center'
+                      },
+                      emphasis: {
+                        label: {
+                          show: true,
+                          fontSize: '18',
+                          fontWeight: 'bold'
+                        }
+                      },
+                      labelLine: {
+                        show: false
+                      },
+                      data: [{
+                          value: 1048,
+                          name: 'Search Engine'
+                        },
+                        {
+                          value: 735,
+                          name: 'Direct'
+                        },
+                        {
+                          value: 580,
+                          name: 'Email'
+                        },
+                        {
+                          value: 484,
+                          name: 'Union Ads'
+                        },
+                        {
+                          value: 300,
+                          name: 'Video Ads'
+                        }
+                      ]
+                    }]
+                  });
+                });
+              </script>
+
+            </div>
+          </div><!-- End Website Traffic -->
+
+          <!-- News & Updates Traffic -->
+          <div class="card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body pb-0">
+              <h5 class="card-title">News &amp; Updates <span>| Today</span></h5>
+
+              <div class="news">
+                <div class="post-item clearfix">
+                  <img src="assets/img/news-1.jpg" alt="">
+                  <h4><a href="#">Nihil blanditiis at in nihil autem</a></h4>
+                  <p>Sit recusandae non aspernatur laboriosam. Quia enim eligendi sed ut harum...</p>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/news-2.jpg" alt="">
+                  <h4><a href="#">Quidem autem et impedit</a></h4>
+                  <p>Illo nemo neque maiores vitae officiis cum eum turos elan dries werona nande...</p>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/news-3.jpg" alt="">
+                  <h4><a href="#">Id quia et et ut maxime similique occaecati ut</a></h4>
+                  <p>Fugiat voluptas vero eaque accusantium eos. Consequuntur sed ipsam et totam...</p>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/news-4.jpg" alt="">
+                  <h4><a href="#">Laborum corporis quo dara net para</a></h4>
+                  <p>Qui enim quia optio. Eligendi aut asperiores enim repellendusvel rerum cuder...</p>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/news-5.jpg" alt="">
+                  <h4><a href="#">Et dolores corrupti quae illo quod dolor</a></h4>
+                  <p>Odit ut eveniet modi reiciendis. Atque cupiditate libero beatae dignissimos eius...</p>
+                </div>
+
+              </div><!-- End sidebar recent posts-->
+
+            </div>
+          </div><!-- End News & Updates -->
+
+        </div><!-- End Right side columns -->
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">siddhant</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static "static/vendor/apexcharts/apexcharts.min.js" %}"></script>
+  <script src="{% static "static/vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+  <script src="{% static "static/vendor/chart.js/chart.umd.js" %}"></script>
+  <script src="{% static "static/vendor/echarts/echarts.min.js" %}"></script>
+  <script src="{% static "static/vendor/quill/quill.min.js" %}"></script>
+  <script src="{% static "static/vendor/simple-datatables/simple-datatables.js" %}"></script>
+  <script src="{% static "static/vendor/tinymce/tinymce.min.js" %}"></script>
+  <script src="{% static "static/vendor/php-email-form/validate.js" %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static "static/js/main.js" %}"></script>
+
+</body>
+
 </html>
-{% endblock body %}
